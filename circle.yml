@@ -1,0 +1,12 @@
+machine:
+    services:
+        - docker
+
+dependencies:
+    override:
+        - docker build -t josiahparry/civis-image .
+
+test:
+    override:
+      - docker run --entrypoint=/bin/bash josiahparry/civis-image -c "echo BUILDS OK"
+      - docker run --entrypoint=/bin/bash josiahparry/civis-image -c "Rscript -e \"library(shiny); q(save = 'no')\""
