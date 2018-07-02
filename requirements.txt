@@ -1,0 +1,5 @@
+shiny
+flexdashboard
+googlesheets
+glue
+janitor
